@@ -51,7 +51,7 @@
 
     $(function () {
         element.typed({
-            strings: ["Technology Leader.", "People Manager."],
+            strings: ["Employee Engagement Specialist.", "Customer Success Coach."],
             typeSpeed: 100,
             loop: true,
             autoplay: true,
