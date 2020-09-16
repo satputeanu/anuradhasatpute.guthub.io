@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <title>Ajay Lakhani's Portfolio</title>
+
+    <!-- ====== Google Fonts ====== -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+    <!-- ====== ALL CSS ====== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+<style>
+        /* Common header elements, move to separate file? */
+        body {
+            margin: 0;
+        }
+        .no-js #page-nav {
+            visibility: hidden;
+        }
+        #page-nav {
+            position: fixed;
+        }
+        #page-nav ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top:0;
+            margin-bottom:0;
+            margin-left:.2em;
+        }
+        #page-nav a {
+            color: #000000;
+        }
+        #page-nav a:visited {
+            color: #000000;
+        }
+        .no-js #scrolled-content {
+            padding-left: 1em;
+        }
+        #scrolled-content {
+            padding-left: 10em;
+        }
+        .active {
+            color: white;
+            background-color: gray;
+        }
+
+        /* this page globals */
+        section {
+            padding-bottom: 1em;
+        }
+        h2 {
+            margin: 0 0 0 0;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        p:first-of-type {
+            margin-top: 0;
+        }
+        .section-content {
+            padding-left: 1em;
+        }
+
+        .headline {
+            font-style: italic;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center
+        }
+
+        .job-list li {
+            padding-bottom: 2em;
+        }
+        .job-list li:last-of-type {
+            padding-bottom: 0em;
+        }
+        .job-list p:last-of-type {
+            margin-bottom: 0;
+        }
+        .job-header {
+            padding-bottom: .3em;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .job-dates {
+            float: right;
+            margin-top: -1em;
+        }
+        .job-city {
+            float: right;
+            margin-top: -1em;
+            font-style: italic;
+        }
+
+        .patent-list li {
+            margin-bottom: 1.5em;
+        }
+        .patent-list li:last-of-type {
+            margin-bottom: 0em;
+        }
+        .patent-header {
+            padding-bottom: .5em;
+        }
+        .patent-number {
+            float: right;
+            margin-top: -1em;
+        }
+        .patent-granted-date {
+            float: right;
+            margin-top: -1em;
+        }
+        .patent-abstract {
+            clear: both;
+        }
+
+        .honor-summary {
+            font-style: italic;
+        }
+
+        .simple-list li {
+            padding-bottom: .5em;
+        }
+        .simple-list li:last-of-type {
+            padding-bottom: 0em;
+        }
+
+        .biggertext {
+            font-size: 1.2em;
+        }
+
+        td {
+            padding: 0;
+        }
+        table {
+            border-spacing: 0;
+        }
+
+@media print {
+    #page-nav {
+        visibility: hidden;
+    }
+    #site-nav {
+        visibility: hidden;
+    }
+    header {
+        position: relative;
+        padding: 0em;
+        border-bottom-width: 0;
+        border-bottom-style: none;
+    }
+    #name {
+        font-size: 3em;
+        text-align: center;
+    }
+    #scrolled-content {
+        padding-left: 0em;
+    }
+    #content {
+        padding: .2em .5em 0em .5em;
+    }
+}
+
+/* Small screens */
+@media only screen {
+} 
+/* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+    header {
+        position: relative;
+        padding: .5em .5em .2em .5em;
+    }
+    #name {
+        font-size: 2em;
+        text-align: center;
+    }
+    #site-nav li {
+        display: block;
+        text-align: center;
+    }
+    .current-page {
+        color: #DD0000;
+        background-color: inherit;
+    }
+    #scrolled-content {
+        padding-left: 0em;
+    }
+    #content {
+        padding: .2em .5em 0em .5em;
+    }
+    #page-nav {
+        visibility: hidden;
+    }
+    .job-dates {
+        float: none;
+        margin-top: 0;
+    }
+    .job-city {
+        float: none;
+        margin-top: 0;
+    }
+    footer {
+        padding: .5em .5em .5em .5em;
+    }
+}
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+/* Medium screens */
+@media only screen and (min-width: 40.063em) {
+}
+/* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    header {
+        padding: .5em .5em .2em .5em;
+    }
+    #content {
+        margin-top: 1em;
+    }
+    footer {
+        padding: 0em 0em 0em .5em;
+    }
+}
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+/* Large screens */
+@media only screen and (min-width: 64.063em) {
+}
+/* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    header {
+        padding: .5em .5em .2em .5em;
+    }
+    #content {
+        margin-top: 1em;
+    }
+    footer {
+        padding: 0em 0em 0em .5em;
+    }
+} 
+/* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+/* XLarge screens */
+@media only screen and (min-width: 90.063em) {
+}
+/* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) {
+    #content {
+        width: 90em;
+        margin-top: 1em;
+    }
+    header {
+        padding: .5em .5em .2em .5em;
+    }
+} 
+/* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+    </style>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-nav">
+    <!-- ====== Header ====== -->
+    <header id="header" class="header"> <!-- ====== Navbar ====== -->
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #ffc900">
+            <div class="container" >
+                <!-- Logo -->
+                <a class="navbar-brand logo" href="index.html">
+                    <h2 class="text-uppercase" style="color:#fff" >Ajay Lakhani</h2>
+                </a>
+                <!-- // Logo -->
+
+                <!-- Mobile Menu -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"><span><i class="fa fa-bars"></i></span></button>
+                <!-- Mobile Menu -->
+
+                <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- ====== // Navbar ====== -->
+
+        <!-- Page Title -->
+        <div class="page-title section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>My Work</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // Page Title -->
+    </header>
+    <!-- ====== // Header ====== -->
+
+
+
+
+    <section class="blog-section">
+        <div class="container" style="font-family: 'Source Sans Pro', sans-serif;">
+                <section class="page-section" id="summary">
+                <h3 class="blog-title">Summary</h3>
+                    <div class="section-content">
+                        <p>An experienced Technology Leader having led engineering organisations and delivered high impact solutions for high-volume e-commerce systems. I am passionate about building high-performing teams, nurturing talent and fostering a culture where engineering thrives. My leadership style focuses on giving clear directions and being able to offer guidance, expertise and help when needed. I have a keen entrepreneurial spirit and a drive to fuel innovation within my teams. Areas of expertise include Engineering Management, People Leadership, Distributed Team Management, Offshore Delivery Management, Talent Management, Mentoring & Coaching, Agile Software Development, Distributed & Scalable System Designs, Micro-services Architecture , Web Technologies, eCommerce Digital Marketing and the Platform Business Model. </p>
+                    </div>
+                </section>
+
+                <section class="page-section" id="experience">
+                    <h3 class="blog-title">Experience</h3>
+                    <div class="section-content">
+                    <ul class="job-list">
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <h5>Engineering Manager</h5>
+                                        <div class="job-dates"><p>March 2018 - Present</p></div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.expedia.com/" target="_blank"><span itemprop="name">Expedia Group</span></a>
+                                        </div>
+                                        <div class="job-city"><p>London, UK</p></div>
+                                </div>
+                                <p class="job-description" itemprop="description">
+                                    Engineering leader for a 20 person merchandising engineering organization in London, Szeged, Amaan and Gurgaon including engineering,  people managers and technical project managers.  The team is responsible for feature development on the merchandising platforms, that facilitates a two-sided marketplace where channel marketeers can create campaigns to delight customers with relevant and personalized travel products; and in-turn better exposure to suppliers. Responsible for building a positive workplace culture where the team can thrive and perform effectively.  Accountable for significant product innovation and growing Expedia customer's repeat rate.  
+                                </p>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Engineering Manager</div>
+                                        <div class="job-dates">February 2014 - March 2018</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.expedia.com/" target="_blank"><span itemprop="name">Expedia Group</span></a>
+                                        </div>
+                                        <div class="job-city">London, UK</div>
+                                </div>
+                                <div class="job-description" itemprop="description">
+                                    From 2016 until 2018, managed a 36 person retail engineering organization, 5 teams across London, Budapest and Gurgaon India, focused on customer experience, merchandising and growth opportunities for retail. Direct reports were senior engineering and technical project managers.  Lead the effort to take the campaign-management and offer-service products from its prototypes to a fully scalable version while building out the engineering team. Partnered with Expedia's conversational team to deliver the Conversations/BOT platform for  LINE on Thailand. Responsible for hiring, technical decisions, delivery, roadmap planning,  budgeting and forecasting.  
+                                    <br/><br/>
+                                    From 2014 until 2016, managed the Checkout team: 16 engineers across 3 locations that delivered programs to improve the checkout experience for our customers. Delivered seat bookings for flights, the capability to book Split-tickets (round-trip ticketing with carriers that do not have inter-carrier agreements); and A/B tested 60+ experiments with more than 20% conversion winners.  Hired all members of the development organization, supported career development, managed performance and helped the team stay technical and result-focused.
+                                </div>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Senior Technology Lead</div>
+                                        <div class="job-dates">April 2011 - February 2014</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.expedia.com/" target="_blank"><span itemprop="name">Expedia Group</span></a>
+                                        </div>
+                                        <div class="job-city">London, UK</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Led a development group of 9 engineers on the migration of the legacy payment system to the next generation of Expedia's checkout experience for the flight and package business, increasing conversion by 6%.  Designed the architecture using domain-driven design and responsible for the technical delivery of product roadmap for checkout. Hired, coached and mentored all members of the development organization and directly contributed to the development of the product.
+                                </div>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Senior Software Engineer</div>
+                                        <div class="job-dates">February 2009 - March 2011</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.expedia.com/" target="_blank"><span itemprop="name">Expedia Group</span></a>
+                                        </div>
+                                        <div class="job-city">London, UK</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Lead developer on the Expedia's landing pages that incorporated features to improve the customer experience. Migrated the legacy stack to use java web technologies and contributed to numerous optimizations that improved site conversion.  Part of the team involved with the adoption of trunk-based development with CI/CD pipelines. Independently developed server-side render caching that improved page performance and upstream traffic.</div>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Software Consultant</div>
+                                        <div class="job-dates">July 2007 - February 2009</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.novell.com/" target="_blank"><span itemprop="name">Novell (now Micro Focus)</span></a>
+                                        </div>
+                                        <div class="job-city">Bangalore, India</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Development lead for the policy-management modules of Novell’s network management product, ZENworks. Led a team of 6 engineers that developed policies to control a range of configuration settings on managed devices across the network. Member of the tiger team member involved in the enterprise-wide adoption of agile project management using Scrum.</div>
+                        </li>
+
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Software Architect</div>
+                                        <div class="job-dates">November 2006 - July 2007</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.cognizant.com/" target="_blank"><span itemprop="name">Cognizant Technologies Solutions</span></a>
+                                        </div>
+                                        <div class="job-city">Bangalore, India</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Developed 'Enterprise Search and Information Retrieval' capabilities for Cognizant's Centre of Excellence practice. Responsible for evaluating enterprise search products in the market, knowledge sharing within the Cognizant’s community and providing domain-specific consultation. Developed an enterprise-search prototype using Apache Solr with federated search across various resources like file system, email system, document management systems, content management system and RDBMS. Defined an enterprise metadata system using the Dublin Core specifications and authored internal white-papers for enterprise-search and information architecture.</div>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Principal Software Engineer</div>
+                                        <div class="job-dates">July 2004 - September 2005</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.arisglobal.com/" target="_blank"><span itemprop="name">ArisGlobal</span></a>
+                                        </div>
+                                        <div class="job-city">Bangalore, India</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Developed the content management module for document capture and storage of drug application (NDA) documents in ARISg, a pharmacovigilance & risk management product for pharmaceutical companies. Independently developed platform modules to support logging instrumentation and automated the software build process.</div>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Senior Software Engineer</div>
+                                        <div class="job-dates">February 2003 - July 2004</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.candelalabs.io/" target="_blank"><span itemprop="name">AWPL (now Candela Labs)</span></a>
+                                        </div>
+                                        <div class="job-city">Bangalore, India</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Developed the content management module and the underwriting tool for InsureSphere, a Business Process Management (BPM) product for the Insurance domain. Independently developed an innovative solution to assist data-entry using image guidance; thereby improving speed and accuracy for underwriters who manually transcribe data from a physical paper to a digital form.</div>
+                        </li>
+
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <div class="job-header">
+                                        <div class="job-title">Software Engineer</div>
+                                        <div class="job-dates">August 2000 - September 2002</div>
+                                        <div class="job-company">
+                                            <a class="outbound" href="https://www.itti.com/" target="_blank"><span itemprop="name">ITTI</span></a>
+                                        </div>
+                                        <div class="job-city">Bangalore, India</div>
+                                </div>
+                                <div class="job-description" itemprop="description">Initiated and executed several projects within the supply-chain domain. Developed with a team, a PalmOS application for Unilever's order tracking process. Acted as a technical consultant for the adoption of Unilever's material-specification system across its Vietnam, Indonesia and Singapore business units.</div>
+                        </li>
+                    
+                    </ul>
+                </div>
+                </section>
+
+
+                <section class="page-section" id="education">
+                <h3 class="blog-title">Education</h3>
+                    <div class="section-content">
+                        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity"><a class="outbound" itemprop="sameAs" href="https://www.sheffield.ac.uk/"><span class="university-name" itemprop="name">The University of Sheffield</span></a>, Sheffield, UK. Masters of Science Degree in Software Systems and Internet Technologies, graduated September 2006. Course work focused on advanced Java programming, software engineering, web technologies, information retrieval and the semantic web.</span>
+                    </div>
+                </section>
+
+                <div class="blog-content-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <P>Connect:</P>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="share text-right">
+                                <li><a href="https://www.linkedin.com/in/ajaylakhani/"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                 <!--  Blog Author -->
+                <div class="blog-author">
+                    <div class="user-img" style="background-image: url(assets/images/team/photo1.png)"></div>
+                    <div class="user-content">
+                        <h2>Ajay Lakhani<span>Technology Leader</span></h2>
+                        <p>An innovative, strategic, technical and people leader with a passion of building high-performing teams.</p>
+                        <!-- Social Area -->
+                        <div class="social-aria text-left">
+                            <a target="_blank" href="https://www.linkedin.com/in/ajaylakhani/"><i class="fab fa-linkedin"></i></a>
+                            <a target="_blank" href="https://twitter.com/ajaylakhani"><i class="fab fa-twitter"></i></a>
+                            <a target="_blank" href="https://instagram.com/ajaylakhani/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <!-- // Social Area -->
+                    </div>
+                </div>
+                <!-- // Blog Author -->
+        </div>
+
+
+    </section>
+
+    <!-- ====== Footer Area ====== -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyright-text">
+                        <p class="text-white">&copy; 2020 Ajay Lakhani</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ====== // Footer Area ====== -->
+
+
+    <!-- ====== ALL JS ====== -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
